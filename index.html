@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.2/simple-sun-sky.js"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <!-- Buscar desde ID -->
+    <div class="info">
+      <form action="">
+        <label for="id">iasuarez</label>
+        <!--
+        <input type="number" name="id" id="id">
+        <div class="button">
+          <a href="#">Search</a>
+        </div>
+        -->        
+      </form>
+    </div>
+
+    <div class="info control">
+      <form action="">
+        <spam>Move</spam>
+        <label for="">W</label>
+        <label for="">A</label>
+        <label for="">S</label>
+        <label for="">D</label>
+      </form>
+    </div>
+
+    <!-- Cargar normales -->
+    <div class="scene">
+      <a-assets>
+          <!-- asset planta -->
+        <a-asset-item id="bodyPlant"
+          src="3d/planta/Planta1.gltf"
+        ></a-asset-item>
+      </a-assets>
+
+      <!-- 
+        Scene 
+        inspector: inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
+      -->
+      
+      <a-scene>        
+
+        <a-simple-sun-sky sun-position="1 0.1 0"></a-simple-sun-sky>
+
+        <a-entity position="-0.5 1.6 2">
+          <a-camera></a-camera>
+        </a-entity>
+
+        <!-- body plant -->
+        <a-entity gltf-model="#bodyPlant"
+          width="3" height="5"
+          position="1 0 -4"
+        ></a-entity>
+          
+        <a-plane position="1.25 0 -4"
+          width="4" height="3"
+          rotation="-90 0 0"
+          color="#001a57"
+        ></a-plane>
+
+      </a-scene>
+    </div>
+  </body>
+</html>
